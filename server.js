@@ -64,7 +64,10 @@ app.post("/api/comments", function(req, res) {
   if (!req.body.email) {
     handleError(res, "Invalid user input", "Must provide an email.", 400);
   } else {
-    db.collection(COMMENT_COLLECTION).insertOne(newComment, function(err, doc) {
+    db.collection(COMMENTS_COLLECTION).insertOne(newComment, function(
+      err,
+      doc
+    ) {
       if (err) {
         handleError(res, err.message, "Failed to create new Comment.");
       } else {
