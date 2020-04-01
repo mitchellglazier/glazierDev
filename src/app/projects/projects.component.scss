@@ -1,0 +1,25 @@
+h2 {
+  text-align: center;
+  font-family: "Permanent Marker", cursive;
+}
+
+.example-card {
+  width: 400px;
+  height: 550px;
+}
+
+.example-header-image {
+  background-image: url("/assets/TNLogo2.png");
+  background-size: cover;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-item {
+  padding: 20px;
+  text-align: center;
+}
