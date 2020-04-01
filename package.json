@@ -13,11 +13,11 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.3",
-    "@angular/cli": "^6.0.8",
+    "@angular/cli": "^9.1.0",
     "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
     "@angular/compiler-cli": "^6.0.7",
-    "@angular/core": "^6.0.3",
+    "@angular/core": "^9.1.0",
     "@angular/forms": "^6.0.3",
     "@angular/http": "^6.0.3",
     "@angular/material": "^6.4.7",
@@ -28,7 +28,8 @@
     "core-js": "^2.5.4",
     "express": "^4.16.3",
     "mongodb": "^3.1.1",
-    "rxjs": "^6.0.0",
+    "rxjs": "^6.4.0",
+    "tslib": "^1.11.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
@@ -37,7 +38,7 @@
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
-    "codelyzer": "~4.2.1",
+    "codelyzer": "^4.2.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
