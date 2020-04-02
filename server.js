@@ -13,9 +13,9 @@ var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
 // other routes defined before catch-all
-app.get("/contact", (req, res) => {
-  res.send("ok");
-});
+// app.get("/contact", (req, res) => {
+//   res.send("ok");
+// });
 
 // catch all route to index.html
 app.get("/*", (req, res) => {
