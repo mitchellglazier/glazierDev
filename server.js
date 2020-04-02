@@ -10,11 +10,11 @@ app.use(bodyParser.json());
 
 // Create link to Angular build directory
 var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
+app.use("/public", express.static(distDir));
 
 // catch all route to index.html
 app.get("/*", (req, res) => {
-  res.sendFile(__dirname + "/glazierDev/src/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
