@@ -1,13 +1,15 @@
 .bg {
-  height: calc(65vh - 57px);
+  height: calc(60vh - 57px);
   width: 100%;
   opacity: 85%;
 }
 
 .background-image-logo {
   font-family: "Permanent Marker", cursive;
-  font-size: 75px;
+  font-size: 100px;
   position: absolute;
-  top: 13%;
-  left: 22.5%;
+  top: 10%;
+  text-align: center;
+  width: 100%;
+  margin: 5px;
 }

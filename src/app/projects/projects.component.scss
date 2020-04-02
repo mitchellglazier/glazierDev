@@ -4,8 +4,9 @@ h2 {
 }
 
 .example-card {
-  width: 400px;
+  margin: 20px;
   height: 550px;
+  width: 400px;
 }
 
 .example-header-image {
@@ -13,13 +14,10 @@ h2 {
   background-size: cover;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
+a:link {
+  text-decoration: none;
 }
 
-.grid-item {
-  padding: 20px;
-  text-align: center;
+a:visited {
+  text-decoration: none;
 }
