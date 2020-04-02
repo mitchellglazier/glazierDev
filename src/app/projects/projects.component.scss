@@ -5,12 +5,22 @@ h2 {
 
 .example-card {
   margin: 20px;
-  height: 550px;
+  height: 400px;
   width: 400px;
 }
 
-.example-header-image {
+.tn-example-header-image {
   background-image: url("/assets/TNLogo2.png");
+  background-size: cover;
+}
+
+.dragon-example-header-image {
+  background-image: url("/assets/dragon_icon.jpg");
+  background-size: cover;
+}
+
+.gm-example-header-image {
+  background-image: url("/assets/Grudge-Match-Icon-Red (1).png");
   background-size: cover;
 }
 
