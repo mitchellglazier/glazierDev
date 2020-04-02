@@ -13,9 +13,7 @@ var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
 // catch all route to index.html
-app.get("*", function(req, res) {
-  res.sendFile(path.join(distDir, "/index.html"));
-});
+app.use(fallback(path.join(distDir, "/index.html")));
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
