@@ -9,7 +9,7 @@
         <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody style="text-align: center">
       <tr *ngFor="let comment of comments">
         <td>{{ comment.name }}</td>
         <td>{{ comment.email }}</td>
@@ -20,7 +20,7 @@
             color="warn"
             (click)="deleteComment(comment._id)"
           >
-            Delete
+            <mat-icon>delete_forever</mat-icon>
           </button>
         </td>
       </tr>
