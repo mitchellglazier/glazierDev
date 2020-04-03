@@ -12,11 +12,6 @@ app.use(bodyParser.json());
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
-// catch all route to index.html
-app.use("*", function(req, res) {
-  res.status(200).sendFile(path.join(distDir, "index.html"));
-});
-
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
 

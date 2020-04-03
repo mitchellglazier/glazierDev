@@ -23,6 +23,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { ContactComponent } from "./contact/contact.component";
 import { CommentService } from "./comment.service";
 import { HttpClientModule } from "@angular/common/http";
+import { HttpModule } from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { HttpClientModule } from "@angular/common/http";
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     HttpClientModule,
     ReactiveFormsModule,
     MatMenuModule,

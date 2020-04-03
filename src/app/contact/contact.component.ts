@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
 import { CommentService } from "../comment.service";
 import { ToastrService } from "ngx-toastr";
@@ -9,6 +9,12 @@ import { ToastrService } from "ngx-toastr";
   styleUrls: ["./contact.component.scss"]
 })
 export class ContactComponent implements OnInit {
+  @Input()
+  comment: Comment;
+
+  @Input()
+  createHandler: Function;
+
   contactForm: FormGroup;
 
   constructor(
@@ -26,15 +32,11 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
-    this.commentService.createComment(this.contactForm.value).subscribe(
-      createdComment => {
-        this.toastr.success("Thank you for reaching out");
+    this.commentService
+      .createComment(this.contactForm.value)
+      .then(newComment => {
+        this.createHandler(newComment);
         this.contactForm.reset();
-      },
-      err => {
-        this.toastr.error("An error occured, try again");
-        this.contactForm.reset();
-      }
-    );
+      });
   }
 }
