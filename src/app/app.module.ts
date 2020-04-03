@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ToastrModule } from "ngx-toastr";
 
 import { MatMenuModule } from "@angular/material/menu";
 import { MatButtonModule } from "@angular/material/button";
@@ -20,6 +21,8 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ContactComponent } from "./contact/contact.component";
+import { CommentService } from "./comment.service";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { ContactComponent } from "./contact/contact.component";
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatMenuModule,
     MatInputModule,
@@ -42,6 +46,7 @@ import { ContactComponent } from "./contact/contact.component";
     MatToolbarModule,
     MatCardModule,
     FlexLayoutModule,
+    ToastrModule.forRoot(),
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
       { path: "contact", component: ContactComponent },
@@ -49,7 +54,7 @@ import { ContactComponent } from "./contact/contact.component";
     ]),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

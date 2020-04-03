@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
+import { CommentService } from "../comment.service";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: "app-contact",
@@ -9,7 +11,11 @@ import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private toastr: ToastrService,
+    private formBuilder: FormBuilder,
+    private commentService: CommentService
+  ) {}
 
   ngOnInit(): void {
     this.contactForm = new FormGroup({
@@ -20,6 +26,15 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.contactForm.value);
+    this.commentService.createComment(this.contactForm.value).subscribe(
+      createdComment => {
+        this.toastr.success("Thank you for reaching out");
+        this.contactForm.reset();
+      },
+      err => {
+        this.toastr.error("An error occured, try again");
+        this.contactForm.reset();
+      }
+    );
   }
 }
