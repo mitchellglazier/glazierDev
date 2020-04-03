@@ -26,11 +26,13 @@ export class CommentService {
       .catch(this.handleError);
   }
 
-  // deleteComment(commentId: string): Observable<Comment> {
-  //   return this.http.delete(this.commentsUrl + "/" + commentId) as Observable<
-  //     Comment
-  //   >;
-  // }
+  deleteComment(delCommentId: string): Promise<void | string> {
+    return this.http
+      .delete(this.commentsUrl + "/" + delCommentId)
+      .toPromise()
+      .then(response => response.json() as string)
+      .catch(this.handleError);
+  }
 
   // updateComment(comment: Comment): Observable<Comment> {
   //   const putUrl = this.commentsUrl + "/" + comment._id;
