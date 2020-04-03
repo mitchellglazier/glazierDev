@@ -10,9 +10,13 @@ export class CommentService {
 
   constructor(private http: Http) {}
 
-  // getComments(): Observable<Comment[]> {
-  //   return this.http.get(this.commentsUrl) as Observable<Comment[]>;
-  // }
+  getComments(): Promise<void | Comment[]> {
+    return this.http
+      .get(this.commentsUrl)
+      .toPromise()
+      .then(response => response.json() as Comment[])
+      .catch(this.handleError);
+  }
 
   createComment(newComment: Comment): Promise<void | Comment> {
     return this.http

@@ -24,6 +24,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { CommentService } from "./comment.service";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpModule } from "@angular/http";
+import { AdminComponent } from "./admin/admin.component";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HttpModule } from "@angular/http";
     NavbarComponent,
     AboutMeComponent,
     ProjectsComponent,
-    ContactComponent
+    ContactComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { HttpModule } from "@angular/http";
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
       { path: "contact", component: ContactComponent },
+      { path: "admin", component: AdminComponent },
       { path: "", component: HomeComponent }
     ]),
     BrowserAnimationsModule
