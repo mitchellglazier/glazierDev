@@ -1,5 +1,6 @@
 <h2 style="text-align: center">Admin</h2>
-<mat-card style="margin: 10px;">
+
+<mat-card style="margin: 10px;" *ngIf="authService?.userData | async">
   <table class="table table-hover" style="width: 100%">
     <thead>
       <tr>
@@ -27,3 +28,16 @@
     </tbody>
   </table>
 </mat-card>
+
+<div *ngIf="!(authService?.userData | async)">
+  <input type="text" [(ngModel)]="email" placeholder="email" />
+  <input type="password" [(ngModel)]="password" placeholder="password" />
+
+  <!-- <button (click)="signUp()">Sign Up</button> -->
+
+  <button (click)="signIn()">Login</button>
+</div>
+
+<button (click)="signOut()" *ngIf="authService?.userData | async">
+  Logout
+</button>

@@ -1,6 +1,12 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
+import { HttpModule } from "@angular/http";
+
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { environment } from "../environments/environment";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -22,9 +28,8 @@ import { HomeComponent } from "./home/home.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ContactComponent } from "./contact/contact.component";
 import { CommentService } from "./comment.service";
-import { HttpClientModule } from "@angular/common/http";
-import { HttpModule } from "@angular/http";
 import { AdminComponent } from "./admin/admin.component";
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
   declarations: [
@@ -34,13 +39,16 @@ import { AdminComponent } from "./admin/admin.component";
     AboutMeComponent,
     ProjectsComponent,
     ContactComponent,
-    AdminComponent
+    AdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     HttpClientModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     ReactiveFormsModule,
     MatMenuModule,
     MatInputModule,
