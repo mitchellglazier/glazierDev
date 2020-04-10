@@ -20,6 +20,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatCardModule } from "@angular/material/card";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatInputModule } from "@angular/material/input";
+import { MatDividerModule } from "@angular/material/divider";
 
 import { AboutMeComponent } from "./about-me/about-me.component";
 import { ProjectsComponent } from "./projects/projects.component";
@@ -54,6 +55,7 @@ import { LoginComponent } from "./login/login.component";
     MatInputModule,
     MatGridListModule,
     MatIconModule,
+    MatDividerModule,
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,

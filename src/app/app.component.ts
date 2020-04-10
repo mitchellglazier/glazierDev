@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { AuthenticationService } from "./authentication.service";
 
 @Component({
@@ -7,5 +7,12 @@ import { AuthenticationService } from "./authentication.service";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
+  showMenu = false;
+  date = new Date();
+
   constructor() {}
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+  }
 }
