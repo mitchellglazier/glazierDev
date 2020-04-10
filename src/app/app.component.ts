@@ -10,7 +10,7 @@ export class AppComponent {
   showMenu = false;
   date = new Date();
 
-  constructor() {}
+  constructor(public authService: AuthenticationService) {}
 
   toggleMenu() {
     this.showMenu = !this.showMenu;

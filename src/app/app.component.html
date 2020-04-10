@@ -41,12 +41,22 @@
         <span>Contact Us</span>
       </button>
       <button
+        *ngIf="!!(authService?.user | async)"
         mat-stroked-button
         style="margin: 5px; font-size: 1.15rem;"
         routerLink="/admin"
         (click)="toggleMenu()"
       >
         <span>Admin</span>
+      </button>
+      <button
+        *ngIf="!(authService?.user | async)"
+        mat-stroked-button
+        style="margin: 5px; font-size: 1.15rem;"
+        routerLink="/login"
+        (click)="toggleMenu()"
+      >
+        <span>Login</span>
       </button>
     </section>
     <section class="menu-footer"></section>

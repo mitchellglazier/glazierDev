@@ -11,8 +11,6 @@ import { AuthenticationService } from "../authentication.service";
 export class AdminComponent implements OnInit {
   comments;
   selectedComment: Comment;
-  email: string;
-  password: string;
 
   @Input()
   deleteHandler: Function;
@@ -34,17 +32,6 @@ export class AdminComponent implements OnInit {
       .then((deletedCommentId: string) => {
         this.deleteHandler(deletedCommentId);
       });
-  }
-
-  signUp() {
-    this.authService.signUp(this.email, this.password);
-    this.email = "";
-    this.password = "";
-  }
-
-  signIn() {
-    this.email = "";
-    this.password = "";
   }
 
   signOut() {

@@ -6,6 +6,7 @@ import { HttpModule } from "@angular/http";
 
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireDatabaseModule } from "angularfire2/database";
 import { environment } from "../environments/environment.prod";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -48,6 +49,7 @@ import { LoginComponent } from "./login/login.component";
     FormsModule,
     HttpModule,
     HttpClientModule,
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ReactiveFormsModule,
@@ -65,6 +67,7 @@ import { LoginComponent } from "./login/login.component";
       { path: "home", component: HomeComponent },
       { path: "contact", component: ContactComponent },
       { path: "admin", component: AdminComponent },
+      { path: "login", component: LoginComponent },
       { path: "", component: HomeComponent }
     ]),
     BrowserAnimationsModule
