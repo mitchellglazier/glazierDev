@@ -1,12 +1,43 @@
-<div *ngIf="!(authService?.userData | async)">
-  <input type="text" [(ngModel)]="email" placeholder="email" />
-  <input type="password" [(ngModel)]="password" placeholder="password" />
+<h2 style="text-align: center">Login to Red Dirt Dev</h2>
+
+<div style="text-align: center">
+  <mat-form-field class="input">
+    <input
+      matInput
+      type="text"
+      placeholder="Email"
+      [(ngModel)]="email"
+      placeholder="email"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="input">
+    <input
+      matInput
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+      placeholder="password"
+    />
+  </mat-form-field>
+  <br />
 
   <!-- <button (click)="signUp()">Sign Up</button> -->
 
-  <button (click)="signIn()">Login</button>
+  <button
+    mat-raised-button
+    *ngIf="!(authService?.user | async)"
+    color="accent"
+    (click)="signIn()"
+  >
+    Login
+  </button>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="signOut()"
+    *ngIf="authService?.user | async"
+  >
+    Logout
+  </button>
 </div>
-
-<button (click)="signOut()" *ngIf="authService?.userData | async">
-  Logout
-</button>
