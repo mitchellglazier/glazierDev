@@ -16,7 +16,7 @@ export class CommentComponent implements OnInit {
     private commentService: CommentService,
     private route: ActivatedRoute
   ) {
-    const id = this.route.snapshot.paramMap.get("_id");
+    const id = this.route.snapshot.paramMap.get("id");
     this.commentService.getComment(id).then(comment => {
       this.comment = comment;
     });

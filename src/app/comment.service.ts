@@ -18,7 +18,7 @@ export class CommentService {
 
   getComment(id: string): Promise<void | Comment> {
     return this.http
-      .get(this.commentsUrl + id)
+      .get(this.commentsUrl + "/" + id)
       .toPromise()
       .then(response => response.json() as Comment)
       .catch(this.handleError);
