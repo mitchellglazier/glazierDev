@@ -19,7 +19,7 @@
       <tr *ngFor="let comment of comments">
         <td>{{ comment?.name }}</td>
         <td>{{ comment?.email }}</td>
-        <td>{{ comment?.createDate | date: "dd/MM/yyyy" }}</td>
+        <td>{{ comment?.createDate | date: "MM/dd/yyyy" }}</td>
         <td>
           <button
             mat-raised-button

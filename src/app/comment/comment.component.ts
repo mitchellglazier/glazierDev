@@ -11,16 +11,18 @@ import { Subscription } from "rxjs";
 export class CommentComponent implements OnInit {
   commentSub: Subscription;
   comment;
+  id;
 
   constructor(
     private commentService: CommentService,
     private route: ActivatedRoute
   ) {
-    const id = this.route.snapshot.paramMap.get("id");
-    this.commentService.getComment(id).then(comment => {
+    this.id = this.route.snapshot.paramMap.get("id");
+  }
+
+  ngOnInit() {
+    this.commentService.getComment(this.id).then(comment => {
       this.comment = comment;
     });
   }
-
-  ngOnInit() {}
 }
