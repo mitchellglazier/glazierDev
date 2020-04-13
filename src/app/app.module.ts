@@ -32,6 +32,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { CommentService } from "./comment.service";
 import { AdminComponent } from "./admin/admin.component";
 import { LoginComponent } from "./login/login.component";
+import { CommentComponent } from "./comment/comment.component";
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { LoginComponent } from "./login/login.component";
       { path: "home", component: HomeComponent },
       { path: "contact", component: ContactComponent },
       { path: "admin", component: AdminComponent },
+      { path: "comment/:id", component: CommentComponent },
       { path: "login", component: LoginComponent },
       { path: "", component: HomeComponent }
     ]),

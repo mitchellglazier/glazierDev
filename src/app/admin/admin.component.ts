@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { CommentService } from "../comment.service";
-import { DataSource } from "@angular/cdk/collections";
 import { AuthenticationService } from "../authentication.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-admin",
@@ -17,7 +17,8 @@ export class AdminComponent implements OnInit {
 
   constructor(
     private commentService: CommentService,
-    public authService: AuthenticationService
+    public authService: AuthenticationService,
+    private router: Router
   ) {}
 
   ngOnInit() {

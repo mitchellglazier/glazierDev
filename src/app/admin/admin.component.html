@@ -12,10 +12,11 @@
         <th>Email</th>
         <th>Message</th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody style="text-align: center">
-      <tr *ngFor="let comment of comments">
+      <tr *ngFor="let comment of comments" (click)="redirectToComment(_id)">
         <td>{{ comment.name }}</td>
         <td>{{ comment.email }}</td>
         <td>{{ comment.message }}</td>
@@ -27,6 +28,11 @@
           >
             <mat-icon>delete_forever</mat-icon>
           </button>
+        </td>
+        <td>
+          <a [routerLink]="['/comment/', comment._id]">
+            <button class="btn btn-outline-warning">View Message</button>
+          </a>
         </td>
       </tr>
     </tbody>
