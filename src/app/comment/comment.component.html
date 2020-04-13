@@ -1,5 +1,5 @@
 <h2>Incoming message from: {{ comment?.email }}</h2>
-<h5>Sent on: {{ comment?.createdDate | Date }}</h5>
+<h5>Sent on: {{ comment?.createdDate | date: "dd/MM/yyyy" }}</h5>
 <mat-divider></mat-divider>
 <h3>Subject: {{ comment?.name }}</h3>
 <h4>Message: {{ comment?.message }}</h4>

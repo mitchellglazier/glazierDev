@@ -10,7 +10,7 @@
       <tr>
         <th>Subject</th>
         <th>Email</th>
-        <th>Message</th>
+        <th>Date</th>
         <th></th>
         <th></th>
       </tr>
@@ -19,7 +19,7 @@
       <tr *ngFor="let comment of comments">
         <td>{{ comment.name }}</td>
         <td>{{ comment.email }}</td>
-        <td>{{ comment.message }}</td>
+        <td>{{ comment.createdDate | date: "dd/MM/yyyy" }}</td>
         <td>
           <button
             mat-raised-button
