@@ -8,7 +8,7 @@
   <table class="table table-hover" style="width: 100%">
     <thead>
       <tr>
-        <th>Name</th>
+        <th>Subject</th>
         <th>Email</th>
         <th>Message</th>
         <th></th>
@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody style="text-align: center">
-      <tr *ngFor="let comment of comments" (click)="redirectToComment(_id)">
+      <tr *ngFor="let comment of comments">
         <td>{{ comment.name }}</td>
         <td>{{ comment.email }}</td>
         <td>{{ comment.message }}</td>
