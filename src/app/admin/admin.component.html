@@ -31,7 +31,13 @@
         </td>
         <td>
           <a [routerLink]="['/comment/', comment._id]">
-            <button class="btn btn-outline-warning">View Message</button>
+            <button
+              mat-raised-button
+              color="primary"
+              class="btn btn-outline-warning"
+            >
+              View Message
+            </button>
           </a>
         </td>
       </tr>

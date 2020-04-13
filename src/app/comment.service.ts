@@ -16,6 +16,14 @@ export class CommentService {
       .catch(this.handleError);
   }
 
+  getComment(id: string): Promise<void | Comment> {
+    return this.http
+      .get(this.commentsUrl + id)
+      .toPromise()
+      .then(response => response.json() as Comment)
+      .catch(this.handleError);
+  }
+
   createComment(newComment: Comment): Promise<void | Comment> {
     return this.http
       .post(this.commentsUrl, newComment)
