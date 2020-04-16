@@ -44,6 +44,20 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({ error: message });
 }
 
+app.get("/*", function(req, res) {
+  res.sendFile(
+    path.join(
+      __dirname,
+      "/Users/mitchellglazier/Desktop/SideGigs/glazierDev/src/index.html"
+    ),
+    function(err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  );
+});
+
 /*  "/api/comments"
  *    GET: finds all comments
  *    POST: creates a new Comment
@@ -126,20 +140,6 @@ app.delete("/api/comments/:id", function(req, res) {
         handleError(res, err.message, "Failed to delete comment");
       } else {
         res.status(200).json(req.params.id);
-      }
-    }
-  );
-});
-
-app.get("/*", function(req, res) {
-  res.sendFile(
-    path.join(
-      __dirname,
-      "/Users/mitchellglazier/Desktop/SideGigs/glazierDev/src/index.html"
-    ),
-    function(err) {
-      if (err) {
-        res.status(500).send(err);
       }
     }
   );
