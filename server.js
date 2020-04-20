@@ -11,20 +11,6 @@ app.use(bodyParser.json());
 // Create link to Angular build directory
 var distDir = __dirname + "/dist/";
 
-app.get("/*", function(req, res) {
-  res.sendFile(
-    path.join(
-      __dirname,
-      "/Users/mitchellglazier/Desktop/SideGigs/glazierDev/src/index.html"
-    ),
-    function(err) {
-      if (err) {
-        res.status(500).send(err);
-      }
-    }
-  );
-});
-
 app.use(express.static(distDir));
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
@@ -58,7 +44,6 @@ function handleError(res, reason, message, code) {
   console.log("ERROR: " + reason);
   res.status(code || 500).json({ error: message });
 }
-
 
 /*  "/api/comments"
  *    GET: finds all comments
